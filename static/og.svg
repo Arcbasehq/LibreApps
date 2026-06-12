@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Libre ù privacy-first apps">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect x="48" y="48" width="1104" height="534" fill="#facc15" stroke="#000" stroke-width="6"/>
+  <rect x="96" y="120" width="520" height="340" fill="#60a5fa" stroke="#000" stroke-width="6"/>
+  <text x="680" y="220" fill="#000" font-family="system-ui, sans-serif" font-size="72" font-weight="700">Libre.</text>
+  <text x="680" y="300" fill="#171717" font-family="system-ui, sans-serif" font-size="42" font-weight="600">Privacy-first apps</text>
+  <text x="680" y="380" fill="#404040" font-family="system-ui, sans-serif" font-size="28">LibreSearch ù no logs ù no ads</text>
+  <text x="680" y="430" fill="#404040" font-family="ui-monospace, monospace" font-size="24">libreapps.xyz</text>
+</svg>
