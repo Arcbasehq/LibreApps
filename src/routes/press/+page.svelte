@@ -10,6 +10,7 @@
 		SITE_DOMAIN,
 		SITE_LAUNCHED,
 		LIBRESEARCH_URL,
+		LIBREAUTH_URL,
 		GITHUB_URL,
 		SITE_NAME,
 		formatLongDate
@@ -17,9 +18,10 @@
 
 	const facts = [
 		{ label: 'Company', value: 'Libre' },
-		{ label: 'Product', value: 'LibreSearch — private web search' },
+		{ label: 'Products', value: 'LibreSearch (search) · LibreAuth (authenticator)' },
 		{ label: 'Libre apps hub', value: SITE_DOMAIN },
 		{ label: 'LibreSearch', value: LIBRESEARCH_URL },
+		{ label: 'LibreAuth', value: LIBREAUTH_URL },
 		{ label: 'Model', value: 'No ads, no sale of user data, community-supported' },
 		{ label: 'License', value: 'AGPL-3.0 (GitHub)' },
 		{ label: 'Site launch', value: formatLongDate(SITE_LAUNCHED) }
@@ -36,11 +38,14 @@
 >
 	<ContentSection title="Boilerplate">
 		<p>
-			<strong>{SITE_NAME}</strong> is a privacy-first software company. Its first product is
+			<strong>{SITE_NAME}</strong> is a privacy-first software company. Its products include
 			<strong>LibreSearch</strong> (<a href={LIBRESEARCH_URL} target="_blank" rel="noopener noreferrer"
 				>libresearch.ca</a
-			>), a search engine that does not log queries, build user profiles, or run ads. Libre ships open
-			source software under AGPL-3.0. {SITE_DOMAIN} launched on {formatLongDate(SITE_LAUNCHED)}.
+			>), a search engine that does not log queries, build user profiles, or run ads, and
+			<strong>LibreAuth</strong> (<a href={LIBREAUTH_URL} target="_blank" rel="noopener noreferrer"
+				>auth.libreapps.xyz</a
+			>), an open-source web authenticator. Libre ships under AGPL-3.0. {SITE_DOMAIN} launched on
+			{formatLongDate(SITE_LAUNCHED)}.
 		</p>
 	</ContentSection>
 
@@ -48,6 +53,7 @@
 		<ul>
 			<li><strong>Libre</strong> — the company.</li>
 			<li><strong>LibreSearch</strong> — the search product (one word, capital L and S).</li>
+			<li><strong>LibreAuth</strong> — the authenticator product (one word, capital L and A).</li>
 			<li>
 				Do not call LibreSearch “Libre” in headlines unless you mean the company. Example: “Libre
 				ships LibreSearch” is correct; “Libre launches new UI” is ambiguous.

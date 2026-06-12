@@ -1,4 +1,4 @@
-import { GITHUB_URL, LIBRESEARCH_URL } from '$lib/config';
+import { GITHUB_URL, LIBREAUTH_URL, LIBRESEARCH_URL } from '$lib/config';
 
 export type SiteLink = {
 	href: string;
@@ -8,18 +8,24 @@ export type SiteLink = {
 };
 
 export const productLinks: SiteLink[] = [
+	{ href: '/products', label: 'All products', description: 'LibreSearch, LibreAuth, and more' },
 	{
 		href: LIBRESEARCH_URL,
 		label: 'LibreSearch',
-		description: 'Our private search engine',
+		description: 'Private search — no query logs',
+		external: true
+	},
+	{
+		href: LIBREAUTH_URL,
+		label: 'LibreAuth',
+		description: 'Open-source web authenticator',
 		external: true
 	},
 	{
 		href: '/extension',
 		label: 'Browser extension',
 		description: 'Set LibreSearch as your default'
-	},
-	{ href: '/#libresearch', label: 'Product overview', description: 'LibreSearch feature tour' }
+	}
 ];
 
 export const companyLinks: SiteLink[] = [
@@ -38,7 +44,9 @@ export const trustLinks: SiteLink[] = [
 ];
 
 export const footerProductLinks: SiteLink[] = [
+	{ href: '/products', label: 'All products' },
 	{ href: LIBRESEARCH_URL, label: 'LibreSearch', external: true },
+	{ href: LIBREAUTH_URL, label: 'LibreAuth', external: true },
 	{ href: '/extension', label: 'Browser extension' },
 	{ href: '/blog', label: 'Blog' },
 	{ href: '/changelog', label: 'Changelog' }

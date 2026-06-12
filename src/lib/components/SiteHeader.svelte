@@ -4,7 +4,6 @@
 	import NavDropdown from './NavDropdown.svelte';
 	import logoText from '../assets/logo-text.png';
 	import { productLinks, companyLinks, trustLinks } from '$lib/site-links';
-	import { LIBRESEARCH_URL } from '$lib/config';
 
 	let mobileOpen = $state(false);
 	let scrolled = $state(false);
@@ -69,7 +68,7 @@
 			</nav>
 
 			<div class="hidden justify-self-end lg:block">
-				<Button href={LIBRESEARCH_URL} external class="!px-5 !py-2">Try LibreSearch</Button>
+				<Button href="/products" class="!px-5 !py-2">Products</Button>
 			</div>
 
 			<button
@@ -113,13 +112,11 @@
 					</div>
 				{/each}
 				<a
-					href={LIBRESEARCH_URL}
-					target="_blank"
-					rel="noopener noreferrer"
+					href="/products"
 					class="neo-card mx-3 bg-(--app-accent) px-4 py-2.5 text-center text-sm font-bold text-(--app-accent-fg) shadow-[var(--app-shadow-sm)] transition hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
 					onclick={closeMobile}
 				>
-					Try LibreSearch
+					Products
 				</a>
 			</nav>
 		{/if}

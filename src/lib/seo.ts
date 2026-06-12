@@ -5,13 +5,14 @@ import {
 	SITE_DOMAIN,
 	SITE_LAUNCHED,
 	LIBRESEARCH_URL,
+	LIBREAUTH_URL,
 	GITHUB_URL,
 	MASTODON_URL,
 	X_URL
 } from '$lib/config';
 
 export const OG_IMAGE = `${SITE_URL}/og.png`;
-export const OG_IMAGE_ALT = 'Libre — privacy-first apps including LibreSearch';
+export const OG_IMAGE_ALT = 'Libre — privacy-first apps including LibreSearch and LibreAuth';
 export const TITLE_SUFFIX = 'Libre';
 export const TWITTER_HANDLE = '@libresearchca';
 
@@ -26,6 +27,7 @@ export type SitemapEntry = {
 export const sitemapRoutes: SitemapEntry[] = [
 	{ path: '', changefreq: 'weekly', priority: 1, lastmod: SITE_LAUNCHED },
 	{ path: '/about', changefreq: 'monthly', priority: 0.9, lastmod: SITE_LAUNCHED },
+	{ path: '/products', changefreq: 'monthly', priority: 0.95, lastmod: SITE_LAUNCHED },
 	{ path: '/security', changefreq: 'monthly', priority: 0.9, lastmod: SITE_LAUNCHED },
 	{ path: '/privacy', changefreq: 'monthly', priority: 0.8, lastmod: SITE_LAUNCHED },
 	{ path: '/terms', changefreq: 'monthly', priority: 0.8, lastmod: SITE_LAUNCHED },
@@ -94,6 +96,25 @@ export function libreSearchApplicationSchema() {
 	};
 }
 
+export function libreAuthApplicationSchema() {
+	return {
+		'@type': 'SoftwareApplication',
+		'@id': `${LIBREAUTH_URL}/#software`,
+		name: 'LibreAuth',
+		applicationCategory: 'SecurityApplication',
+		operatingSystem: 'Web',
+		url: LIBREAUTH_URL,
+		description:
+			'Open-source web authenticator for TOTP codes. Syncs across devices with optional account; codes generate in your browser.',
+		offers: {
+			'@type': 'Offer',
+			price: '0',
+			priceCurrency: 'USD'
+		},
+		author: { '@id': `${SITE_URL}/#organization` }
+	};
+}
+
 export function faqPageSchema(faqs: FaqItem[]) {
 	return {
 		'@type': 'FAQPage',
@@ -152,6 +173,7 @@ export function homePageSchemas(faqs: FaqItem[]) {
 		organizationSchema(),
 		websiteSchema(),
 		libreSearchApplicationSchema(),
+		libreAuthApplicationSchema(),
 		faqPageSchema(faqs)
 	);
 }

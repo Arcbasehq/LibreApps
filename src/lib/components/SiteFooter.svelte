@@ -17,7 +17,7 @@
 					><Wordmark inverse class="text-2xl" /></a
 				>
 				<p class="mt-4 text-sm leading-6 text-white/75">
-					Privacy-first Libre apps. LibreSearch is our first — no tracking, profiles, or ads.
+					Privacy-first Libre apps — LibreSearch for private search, LibreAuth for TOTP codes.
 				</p>
 				<div class="mt-6 flex items-center gap-4 text-white/60">
 					<a

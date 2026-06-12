@@ -2,9 +2,11 @@ export const SITE_URL = 'https://www.libreapps.xyz';
 export const SITE_DOMAIN = 'www.libreapps.xyz';
 export const SITE_NAME = 'Libre';
 export const SITE_DESCRIPTION =
-	'Libre apps — privacy-first software. LibreSearch is our private search engine with no tracking, profiles, or ads. More Libre apps on the way.';
+	'Libre apps — privacy-first software. LibreSearch is private search with no tracking. LibreAuth is an open-source web authenticator. More Libre apps on the way.';
 export const LIBRESEARCH_URL = 'https://libresearch.ca';
+export const LIBREAUTH_URL = 'https://auth.libreapps.xyz';
 export const GITHUB_URL = 'https://github.com/Arcbasehq/LibreSearch';
+export const LIBREAUTH_GITHUB_URL = 'https://github.com/Arcbasehq/LibreAuth';
 export const MASTODON_URL = 'https://mastodon.social/@libresearch';
 export const X_URL = 'https://x.com/libresearchca';
 

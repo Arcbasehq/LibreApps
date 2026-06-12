@@ -5,7 +5,7 @@
 	import Illustration from '$lib/components/Illustration.svelte';
 	import CtaBanner from '$lib/components/CtaBanner.svelte';
 	import SeoHead from '$lib/components/SeoHead.svelte';
-	import { SITE_URL, LIBRESEARCH_URL, GITHUB_URL } from '$lib/config';
+	import { SITE_URL, LIBREAUTH_URL, LIBRESEARCH_URL, GITHUB_URL } from '$lib/config';
 	import { defaultBreadcrumbs, innerPageSchemas } from '$lib/seo';
 
 	const aboutDescription =
@@ -56,8 +56,8 @@
 			</h1>
 			<p class="mt-6 text-lg leading-8 text-(--app-secondary)">
 				Big tech logs what you do, builds profiles, and sells your attention. Libre is the company
-				building an alternative: privacy-first software you can actually use — starting with search,
-				with more products to come.
+				building an alternative: privacy-first software you can actually use — LibreSearch for search,
+				LibreAuth for two-factor codes, and more on the way.
 			</p>
 		</Container>
 	</section>
@@ -82,6 +82,17 @@
 								>LibreSearch</a
 							>, returns web results without logging queries, building profiles, or running ads. It is
 							open source and works without an account.
+						</p>
+						<p class="mt-4">
+							Our second product,
+							<a
+								href={LIBREAUTH_URL}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="rounded-(--radius-sm) font-medium text-(--app-accent) hover:underline"
+								>LibreAuth</a
+							>, is a web authenticator for TOTP codes — scan QR codes, sync entries, and generate
+							codes in your browser. Also AGPL-3.0 and hosted at auth.libreapps.xyz.
 						</p>
 					</div>
 				</div>
@@ -109,9 +120,9 @@
 					</p>
 					<div class="text-[15px] leading-8 text-(--app-muted)">
 						<p>
-							Search is where most people touch the web, so that is where Libre began. Every product
-							we ship next will follow the same rules: collect nothing, ship open code, stay free to
-							use.
+							Search is where most people touch the web, so that is where Libre began. LibreAuth
+							follows the same rules: collect nothing unnecessary, ship open code, stay free to use.
+							Every product we ship next will too.
 						</p>
 					</div>
 				</div>
@@ -146,6 +157,9 @@
 				<Button href={LIBRESEARCH_URL} external>
 					Try LibreSearch
 					<Icon name="arrowRight" class="text-sm leading-none" />
+				</Button>
+				<Button href={LIBREAUTH_URL} external variant="secondary">
+					Open LibreAuth
 				</Button>
 				<Button href={GITHUB_URL} external variant="secondary">Read the source</Button>
 				<Button href="/contact" variant="secondary">Contact us</Button>

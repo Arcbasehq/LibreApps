@@ -2,7 +2,7 @@
 	import Icon from './Icon.svelte';
 
 	interface Props {
-		variant?: 'search' | 'eco' | 'settings';
+		variant?: 'search' | 'eco' | 'settings' | 'auth';
 		class?: string;
 	}
 	let { variant = 'search', class: className = '' }: Props = $props();
@@ -24,7 +24,7 @@
 		<span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
 		<span
 			class="ml-3 flex-1 rounded-full bg-(--mock-bg) px-3 py-1 font-(family-name:--font-mono) text-[11px] text-(--mock-muted)"
-			>libresearch.ca</span
+			>{variant === 'auth' ? 'auth.libreapps.xyz' : 'libresearch.ca'}</span
 		>
 	</div>
 
@@ -52,6 +52,30 @@
 					</div>
 				{/each}
 			</div>
+		</div>
+	{:else if variant === 'auth'}
+		<div class="px-8 py-10 text-(--mock-text)">
+			<p class="text-center text-xl font-bold tracking-tight">
+				Libre<span class="text-(--app-accent)">Auth</span>
+			</p>
+			<div class="mt-6 space-y-3">
+				{#each [{ name: 'GitHub', code: '482 193', pct: 72 }, { name: 'Proton Mail', code: '901 442', pct: 41 }, { name: 'Cloudflare', code: '553 018', pct: 88 }] as row (row.name)}
+					<div
+						class="rounded-(--radius-md) border border-(--mock-border) bg-(--mock-surface) px-3 py-3"
+					>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-xs font-semibold text-(--mock-secondary)">{row.name}</span>
+							<span class="font-(family-name:--font-mono) text-lg font-bold tabular-nums tracking-widest"
+								>{row.code}</span
+							>
+						</div>
+						<div class="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10">
+							<div class="h-full rounded-full bg-(--app-accent)/70" style="width: {row.pct}%"></div>
+						</div>
+					</div>
+				{/each}
+			</div>
+			<p class="mt-5 text-center text-[11px] text-(--mock-muted)">Codes generated in your browser</p>
 		</div>
 	{:else if variant === 'eco'}
 		<div class="px-8 py-10 text-(--mock-text)">
@@ -106,7 +130,7 @@
 	>
 		<span class="flex items-center gap-1.5">
 			<span class="h-1.5 w-1.5 rounded-full bg-emerald-400/80"></span>
-			queries logged: 0
+			{variant === 'auth' ? 'TOTP synced · no ads' : 'queries logged: 0'}
 		</span>
 		<span>AGPL-3.0 · open source</span>
 	</div>

@@ -9,7 +9,7 @@
 	import ProductMock from '$lib/components/ProductMock.svelte';
 	import Illustration from '$lib/components/Illustration.svelte';
 	import SeoHead from '$lib/components/SeoHead.svelte';
-	import { SITE_DESCRIPTION, SITE_URL, LIBRESEARCH_URL, GITHUB_URL } from '$lib/config';
+	import { SITE_DESCRIPTION, SITE_URL, LIBREAUTH_GITHUB_URL, LIBREAUTH_URL, LIBRESEARCH_URL, GITHUB_URL } from '$lib/config';
 	import { homePageSchemas } from '$lib/seo';
 
 	const facts = [
@@ -71,11 +71,15 @@
 	const faqs = [
 		{
 			q: 'What is Libre?',
-			a: 'Libre is a privacy-first software company — similar to how Proton builds Mail, VPN, and other tools under one roof. We ship products that work without tracking you. LibreSearch is the first; more are coming.'
+			a: 'Libre is a privacy-first software company — similar to how Proton builds Mail, VPN, and other tools under one roof. LibreSearch is our private search engine; LibreAuth is our open-source web authenticator. More products are coming.'
 		},
 		{
 			q: 'What is LibreSearch?',
 			a: 'Our private search engine. You get web results without query logs, profiles, or ads. It runs at libresearch.ca and is free to use without an account.'
+		},
+		{
+			q: 'What is LibreAuth?',
+			a: 'Our web authenticator for TOTP codes — scan QR codes, sync entries across devices, and generate codes in your browser. It runs at auth.libreapps.xyz and is open source under AGPL-3.0.'
 		},
 		{
 			q: 'How is Libre different from private browsing?',
@@ -116,11 +120,11 @@
 						Software that does not watch you.
 					</h1>
 					<p class="mt-5 text-base leading-7 text-(--app-muted) sm:text-lg">
-						Libre builds privacy tools for everyday use. LibreSearch is our first product — private
-						search with no query logs, profiles, or ads. More products are on the way.
+						Libre builds privacy tools for everyday use. LibreSearch is private search with no query
+						logs. LibreAuth is an open-source authenticator. Same rules across every product.
 					</p>
 					<div class="mt-7 flex flex-wrap items-center gap-3">
-						<Button href={LIBRESEARCH_URL} external class="!px-6 !py-2.5">Try LibreSearch</Button>
+						<Button href="/products" class="!px-6 !py-2.5">Browse products</Button>
 						<Button href="/about" variant="secondary" class="!px-6 !py-2.5">About Libre</Button>
 					</div>
 				</div>
@@ -152,11 +156,56 @@
 		<FeatureTabs />
 	</Section>
 
+	<!-- ============ LibreAuth ============ -->
+	<Section
+		id="libreauth"
+		eyebrow="Products"
+		title="LibreAuth — TOTP without the bloat."
+		lead="Open-source web authenticator. Scan QR codes, sync your vault, and generate codes in the browser — no ads, no tracking."
+		size="wide"
+		bordered={false}
+		class="border-t-[3px] border-(--app-border) pt-8 pb-20 sm:pb-28"
+	>
+		<div class="mt-14 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+			<div>
+				<h3 class="text-2xl font-bold tracking-tight text-balance sm:text-3xl">
+					Your codes, your vault, your browser.
+				</h3>
+				<ul class="mt-6 space-y-3.5">
+					{#each ['Add accounts by scanning QR codes or pasting secrets.', 'Optional sync across devices with a LibreAuth account.', 'Codes generate client-side — we never see live TOTP output.', 'AGPL-3.0 open source. Run it yourself if you want.'] as point (point)}
+						<li class="flex items-start gap-3 text-[15px] leading-7 text-(--app-secondary)">
+							<span
+								class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center border-[2px] border-(--app-border) bg-(--app-accent-bright) text-(--app-text)"
+							>
+								<Icon name="check" class="text-xs leading-none" />
+							</span>
+							{point}
+						</li>
+					{/each}
+				</ul>
+				<div class="mt-8 flex flex-wrap gap-3">
+					<Button href={LIBREAUTH_URL} external>
+						Open LibreAuth
+						<Icon name="arrowRight" class="text-sm leading-none" />
+					</Button>
+					<Button href={LIBREAUTH_GITHUB_URL} external variant="secondary">
+						View source
+					</Button>
+				</div>
+			</div>
+			<div class="relative lg:pl-4">
+				<div class="animate-slide-up relative">
+					<ProductMock variant="auth" />
+				</div>
+			</div>
+		</div>
+	</Section>
+
 	<!-- ============ Verifiable facts — Tailscale stats strip pattern ============ -->
 	<section class="border-y-[3px] border-(--app-border) bg-(--app-panel)">
 		<Container size="wide" class="py-16 sm:py-20">
 			<p class="text-center text-sm font-bold text-(--app-secondary)">
-				What LibreSearch delivers today — under the same rules every future product will follow.
+				What Libre ships today — under the same rules every future product will follow.
 			</p>
 			<div class="mt-10 grid gap-8 sm:grid-cols-3 sm:gap-6">
 				{#each facts as fact (fact.unit)}
