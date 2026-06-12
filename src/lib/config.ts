@@ -1,5 +1,5 @@
-export const SITE_URL = 'https://libreapps.xyz';
-export const SITE_DOMAIN = 'libreapps.xyz';
+export const SITE_URL = 'https://www.libreapps.xyz';
+export const SITE_DOMAIN = 'www.libreapps.xyz';
 export const SITE_NAME = 'Libre';
 export const SITE_DESCRIPTION =
 	'Libre apps — privacy-first software. LibreSearch is our private search engine with no tracking, profiles, or ads. More Libre apps on the way.';
